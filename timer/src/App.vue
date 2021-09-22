@@ -1,13 +1,40 @@
-<script setup>
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Hello Vue 3 + Vite" />
+  <h1>Reaction timer</h1>
+  <h3>Measure your reaction time...</h3>
+  <button @click="start" :disabled="isPlaying">Play</button>
+  <Block v-if="isPlaying" :delay="delay" @end="endGame" />
+  <Results v-if="showResults" :score="score" />
 </template>
+
+<script>
+import Block from './components/Block.vue';
+import Results from './components/Results.vue';
+
+export default {
+  name: 'App',
+  components: { Block, Results },
+  data() {
+    return {
+      isPlaying: false,
+      delay: null,
+      score: null,
+      showResults: false,
+    };
+  },
+  methods: {
+    start() {
+      this.delay = 2000 + Math.random() * 2000;
+      this.isPlaying = true;
+      this.showResults = false;
+    },
+    endGame(reactionTime) {
+      this.score = reactionTime;
+      this.isPlaying = false;
+      this.showResults = true;
+    },
+  },
+};
+</script>
 
 <style>
 #app {
@@ -17,5 +44,27 @@ import HelloWorld from './components/HelloWorld.vue'
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+
+h1 {
+  text-transform: uppercase;
+  color: #0faf87;
+}
+
+button {
+  background: #0faf87;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 16px;
+  letter-spacing: 1px;
+  cursor: pointer;
+  margin: 10px;
+}
+
+button:disabled {
+  opacity: 0.2;
+  cursor: not-allowed;
 }
 </style>
