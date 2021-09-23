@@ -1,9 +1,11 @@
 <template>
-  <h1>Reaction timer</h1>
-  <h3>Measure your reaction time...</h3>
-  <button @click="start" :disabled="isPlaying">Play</button>
-  <Block v-if="isPlaying" :delay="delay" @end="endGame" />
-  <Results v-if="showResults" :score="score" />
+  <div>
+    <h1>Reaction timer</h1>
+    <h3>Measure your reaction time...</h3>
+    <button @click="start" :disabled="isPlaying">Play</button>
+    <Block v-if="isPlaying" :delay="delay" @end="endGame" />
+    <Results v-if="showResults" :score="score" />
+  </div>
 </template>
 
 <script>
