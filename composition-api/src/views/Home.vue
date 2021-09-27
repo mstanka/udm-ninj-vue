@@ -36,7 +36,7 @@ export default {
   margin: 0 auto;
   padding: 1rem;
   background: var(--secondary-color);
-  height: 100vh;
+  min-height: 100vh;
 }
 
 @media (min-width: 768px) {
