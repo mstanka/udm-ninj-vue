@@ -14,7 +14,7 @@ export default {};
   margin: 30px auto;
   border: 3px solid transparent;
   border-radius: 50%;
-  border-top-color: #58df58;
+  border-top-color: var(--accent-color);
   animation: spin 1s ease infinite;
 }
 

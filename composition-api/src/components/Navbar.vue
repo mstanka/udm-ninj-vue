@@ -15,24 +15,35 @@ export default {};
 <style>
 header {
   text-align: center;
-  max-width: 1200px;
-  margin: 0 auto 3rem auto;
-  padding: 10px;
-
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 3rem;
+  background: linear-gradient(
+    to bottom,
+    var(--secondary-dark-color),
+    var(--secondary-color)
+  );
 }
 
 header h1 {
-  color: #dfdfdf;
-  font-size: 4rem;
+  color: var(--primary-color);
+  font-size: 2.3rem;
   margin-bottom: 2rem;
 }
+
+@media (min-width: 768px) {
+  header h1 {
+    font-size: 4rem;
+  }
+}
 header a {
-  color: #bbb;
+  color: var(--primary-dark-color);
   text-decoration: none;
   margin-left: 20px;
+  font-size: 1.3rem;
 }
 header a.router-link-active {
-  color: #444;
+  color: var(--accent-color);
   font-weight: bold;
 }
 </style>

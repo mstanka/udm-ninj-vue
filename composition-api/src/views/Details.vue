@@ -52,9 +52,8 @@ export default {
 }
 
 .post p {
-  color: #444;
   line-height: 1.5em;
-  margin-top: 40px;
+  margin: 2rem auto;
 }
 
 .pre {
@@ -64,8 +63,8 @@ export default {
 .pill {
   display: inline-block;
   margin: 10px 10px 0 0;
-  color: #444;
-  background: #ccc;
+  color: var(--secondary-dark-color);
+  background: var(--primary-ligth-color);
   padding: 6px 12px;
   border-radius: 5px;
   font-size: 14px;

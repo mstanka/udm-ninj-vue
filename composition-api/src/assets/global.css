@@ -1,0 +1,22 @@
+:root {
+  --primary-color: #dfdfdf;
+  --primary-dark-color: #bbb;
+  --primary-ligth-color: #e7e7e7;
+  --secondary-color: #7e2d2d;
+  --secondary-dark-color: #411717;
+  --accent-color: #58df58;
+  --ligth-color: #fff;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}

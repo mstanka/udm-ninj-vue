@@ -27,20 +27,20 @@ export default {
   padding: 10px;
 }
 .tag-cloud h3 {
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--primary-ligth-color);
   padding: 16px 8px;
-  color: #444;
+  color: var(--accent-color);
 }
 .tag-cloud div {
   display: inline-block;
   padding: 10px;
 }
 .tag-cloud a {
-  color: #ccc;
+  color: var(--primary-ligth-color);
   text-decoration: none;
 }
 .tag-cloud a.router-link-active {
-  color: #58df58;
+  color: var(--accent-color);
   font-weight: bold;
 }
 </style>

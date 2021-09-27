@@ -1,6 +1,5 @@
 <template>
   <div class="container">
-    <h1>Home</h1>
     <div v-if="error">{{ error }}</div>
     <div v-if="posts.length" class="layout">
       <PostList :posts="posts" />
@@ -35,10 +34,16 @@ export default {
 .container {
   max-width: 900px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 1rem;
+  background: var(--secondary-color);
+  height: 100vh;
 }
 
 @media (min-width: 768px) {
+  .container {
+    padding: 3rem;
+  }
+
   .layout {
     display: grid;
     grid-template-columns: 3fr 1fr;

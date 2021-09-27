@@ -1,5 +1,5 @@
 <template>
-  <div class="create">
+  <div class="container">
     <form @submit.prevent="handleSubmit">
       <label for="title">Title</label>
       <input type="text" required v-model="title" />
@@ -65,16 +65,13 @@ export default {
 </script>
 
 <style>
-.create {
-  background: #eee;
-  padding: 2rem 0 5rem 0;
-  max-width: 900px;
-  margin: 0 auto;
-}
 form {
-  max-width: 480px;
+  max-width: 680px;
   margin: 0 auto;
   text-align: left;
+  padding: 2rem;
+  border: 1px dashed var(--primary-ligth-color);
+  box-shadow: 2px 4px 10px var(--secondary-dark-color);
 }
 input,
 textarea {
@@ -83,7 +80,7 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 10px;
-  border: 1px solid #ccc;
+  border: 1px solid var(--primary-ligth-color);
 }
 textarea {
   height: 160px;
@@ -93,16 +90,16 @@ label {
   margin-top: 30px;
   position: relative;
   font-size: 20px;
-  color: white;
+  color: var(--ligth-color);
   margin-bottom: 10px;
-  background: #58df58;
+  background: var(--accent-color);
   padding: 5px 20px;
   border-radius: 3px;
 }
 button {
   display: block;
   margin-top: 30px;
-  background: #58df58;
+  background: var(--accent-color);
   color: white;
   border: none;
   padding: 10px 40px;
