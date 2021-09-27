@@ -20,6 +20,7 @@
 <script>
 import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+import { projectFirestore, timestamp } from '../firebase/config';
 
 export default {
   setup() {
@@ -46,24 +47,12 @@ export default {
         title: title.value,
         body: body.value,
         tags: tags.value,
+        createdAt: timestamp(),
       };
 
-      await fetch('http://localhost:3000/posts', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(post),
-      });
-
       try {
-        let data = await fetch('http://localhost:3000/posts', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(post),
-        });
+        const res = await projectFirestore.collection('posts').add(post);
 
-        if (!data.ok) {
-          throw Error('the post cannot be submitted');
-        }
         router.push('/');
       } catch (err) {
         error.value = err.message;
