@@ -1,0 +1,35 @@
+body {
+  background: linear-gradient(to bottom, #6f966f, #516d51);
+  color: #516d51;
+  min-height: 100vh;
+}
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: 80px auto;
+  border-radius: 10px;
+  box-shadow: 2px 4px 6px rgba(28, 6, 49, 0.1);
+  background: white;
+}
+.error {
+  color: #ff3f80;
+  font-size: 14px;
+}
+button {
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(to bottom, #6f966f, #516d51);
+  color: white;
+  font-weight: bold;
+  border: 0;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button:hover,
+button:focus {
+  outline: 2px dotted #516d51;
+  background: #6f966f;
+}
